@@ -128,125 +128,6 @@
     "type": "event"
   },
   {
-    "inputs": [
-      {
-        "components": [
-          {
-            "internalType": "bytes32",
-            "name": "r",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "bytes32",
-            "name": "s",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "uint8",
-            "name": "v",
-            "type": "uint8"
-          },
-          {
-            "internalType": "uint64",
-            "name": "maxTimestamp",
-            "type": "uint64"
-          },
-          {
-            "components": [
-              {
-                "internalType": "uint128",
-                "name": "indexPrice",
-                "type": "uint128"
-              },
-              {
-                "internalType": "uint128",
-                "name": "markPrice",
-                "type": "uint128"
-              },
-              {
-                "internalType": "bytes32",
-                "name": "symbolHash",
-                "type": "bytes32"
-              },
-              {
-                "internalType": "uint64",
-                "name": "timestamp",
-                "type": "uint64"
-              }
-            ],
-            "internalType": "struct MarketTypes.PerpPrice[]",
-            "name": "perpPrices",
-            "type": "tuple[]"
-          }
-        ],
-        "internalType": "struct MarketTypes.UploadPerpPrice",
-        "name": "data",
-        "type": "tuple"
-      }
-    ],
-    "name": "PerpPriceUpload",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "components": [
-          {
-            "internalType": "bytes32",
-            "name": "r",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "bytes32",
-            "name": "s",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "uint8",
-            "name": "v",
-            "type": "uint8"
-          },
-          {
-            "internalType": "uint64",
-            "name": "maxTimestamp",
-            "type": "uint64"
-          },
-          {
-            "components": [
-              {
-                "internalType": "int128",
-                "name": "sumUnitaryFunding",
-                "type": "int128"
-              },
-              {
-                "internalType": "bytes32",
-                "name": "symbolHash",
-                "type": "bytes32"
-              },
-              {
-                "internalType": "uint64",
-                "name": "timestamp",
-                "type": "uint64"
-              }
-            ],
-            "internalType": "struct MarketTypes.SumUnitaryFunding[]",
-            "name": "sumUnitaryFundings",
-            "type": "tuple[]"
-          }
-        ],
-        "internalType": "struct MarketTypes.UploadSumUnitaryFundings",
-        "name": "data",
-        "type": "tuple"
-      }
-    ],
-    "name": "SumUnitaryFundingsUpload",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "cefiSignatureAddress",
     "outputs": [
@@ -534,6 +415,68 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "maxTimestamp",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint128",
+                "name": "indexPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "markPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "symbolHash",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "timestamp",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct MarketTypes.PerpPrice[]",
+            "name": "perpPrices",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct MarketTypes.UploadPerpPrice",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "perpPriceUpload",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "renounceOwnership",
     "outputs": [],
@@ -575,6 +518,63 @@
       }
     ],
     "name": "setOperator",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "maxTimestamp",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "int128",
+                "name": "sumUnitaryFunding",
+                "type": "int128"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "symbolHash",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "timestamp",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct MarketTypes.SumUnitaryFunding[]",
+            "name": "sumUnitaryFundings",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct MarketTypes.UploadSumUnitaryFundings",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "sumUnitaryFundingsUpload",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
