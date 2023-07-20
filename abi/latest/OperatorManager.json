@@ -179,12 +179,12 @@
             "type": "tuple[]"
           }
         ],
-        "internalType": "struct MarketTypes.PerpMarketUploadPerpPrice",
+        "internalType": "struct MarketTypes.UploadPerpPrice",
         "name": "data",
         "type": "tuple"
       }
     ],
-    "name": "PerpMarketInfoPerpPrice",
+    "name": "PerpPriceUpload",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -236,12 +236,12 @@
             "type": "tuple[]"
           }
         ],
-        "internalType": "struct MarketTypes.PerpMarketUploadSumUnitaryFundings",
+        "internalType": "struct MarketTypes.UploadSumUnitaryFundings",
         "name": "data",
         "type": "tuple"
       }
     ],
-    "name": "PerpMarketInfoSumUnitaryFundings",
+    "name": "SumUnitaryFundingsUpload",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
