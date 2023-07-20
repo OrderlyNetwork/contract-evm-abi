@@ -188,7 +188,7 @@
         "type": "bytes32"
       }
     ],
-    "name": "allowedBroker",
+    "name": "_deprecatedA",
     "outputs": [
       {
         "internalType": "bool",
@@ -207,7 +207,7 @@
         "type": "bytes32"
       }
     ],
-    "name": "allowedToken",
+    "name": "_deprecatedB",
     "outputs": [
       {
         "internalType": "contract IERC20",
@@ -216,6 +216,43 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "name": "allowedToken",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_tokenHash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "_tokenAddress",
+        "type": "address"
+      }
+    ],
+    "name": "changeTokenAddressAndAllow",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -294,6 +331,70 @@
   },
   {
     "inputs": [],
+    "name": "getAllAllowedBroker",
+    "outputs": [
+      {
+        "internalType": "bytes32[]",
+        "name": "",
+        "type": "bytes32[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAllAllowedToken",
+    "outputs": [
+      {
+        "internalType": "bytes32[]",
+        "name": "",
+        "type": "bytes32[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_brokerHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getAllowedBroker",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_tokenHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getAllowedToken",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "initialize",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -345,9 +446,9 @@
         "type": "bytes32"
       },
       {
-        "internalType": "address",
-        "name": "_tokenAddress",
-        "type": "address"
+        "internalType": "bool",
+        "name": "_allowed",
+        "type": "bool"
       }
     ],
     "name": "setAllowedToken",
