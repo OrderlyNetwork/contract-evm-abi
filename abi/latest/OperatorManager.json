@@ -132,24 +132,131 @@
       {
         "components": [
           {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
             "internalType": "uint8",
-            "name": "bizType",
+            "name": "v",
             "type": "uint8"
           },
           {
-            "internalType": "bytes",
-            "name": "data",
-            "type": "bytes"
+            "internalType": "uint64",
+            "name": "maxTimestamp",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint128",
+                "name": "indexPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "markPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "symbolHash",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "timestamp",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct MarketTypes.PerpPrice[]",
+            "name": "perpPrices",
+            "type": "tuple[]"
           }
         ],
-        "internalType": "struct MarketTypes.PerpMarketUpload",
+        "internalType": "struct MarketTypes.PerpMarketUploadPerpPrice",
         "name": "data",
         "type": "tuple"
       }
     ],
-    "name": "PerpMarketInfo",
+    "name": "PerpMarketInfoPerpPrice",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "maxTimestamp",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "int128",
+                "name": "sumUnitaryFunding",
+                "type": "int128"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "symbolHash",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "timestamp",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct MarketTypes.SumUnitaryFunding[]",
+            "name": "sumUnitaryFundings",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct MarketTypes.PerpMarketUploadSumUnitaryFundings",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "PerpMarketInfoSumUnitaryFundings",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cefiSignatureAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -395,7 +502,7 @@
   },
   {
     "inputs": [],
-    "name": "operator",
+    "name": "operatorAddress",
     "outputs": [
       {
         "internalType": "address",
@@ -437,6 +544,19 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "_cefiSignatureAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setCefiSignatureAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "_ledger",
         "type": "address"
       }
@@ -450,7 +570,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_operator",
+        "name": "_operatorAddress",
         "type": "address"
       }
     ],

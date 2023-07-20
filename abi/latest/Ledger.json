@@ -83,6 +83,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "SymbolNotAllowed",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "bytes32",
@@ -453,6 +458,12 @@
     "inputs": [
       {
         "indexed": true,
+        "internalType": "uint64",
+        "name": "eventId",
+        "type": "uint64"
+      },
+      {
+        "indexed": true,
         "internalType": "bytes32",
         "name": "accountId",
         "type": "bytes32"
@@ -496,7 +507,7 @@
       {
         "indexed": false,
         "internalType": "uint64",
-        "name": "eventId",
+        "name": "lastCefiEventId",
         "type": "uint64"
       }
     ],
@@ -521,6 +532,49 @@
     "inputs": [
       {
         "indexed": true,
+        "internalType": "uint64",
+        "name": "eventId",
+        "type": "uint64"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "liquidatedAccountId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "insuranceAccountId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "liquidatedAssetHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "insuranceTransferAmount",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "lastCefiEventId",
+        "type": "uint64"
+      }
+    ],
+    "name": "LiquidationResult",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
         "internalType": "address",
         "name": "previousOwner",
         "type": "address"
@@ -538,6 +592,12 @@
   {
     "anonymous": false,
     "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "eventId",
+        "type": "uint64"
+      },
       {
         "indexed": true,
         "internalType": "bytes32",
@@ -577,7 +637,7 @@
       {
         "indexed": false,
         "internalType": "uint64",
-        "name": "eventId",
+        "name": "lastCefiEventId",
         "type": "uint64"
       }
     ],
@@ -795,14 +855,19 @@
             "type": "bytes32"
           },
           {
+            "internalType": "bytes32",
+            "name": "liquidatedAssetHash",
+            "type": "bytes32"
+          },
+          {
             "internalType": "uint128",
             "name": "insuranceTransferAmount",
             "type": "uint128"
           },
           {
-            "internalType": "bytes32",
-            "name": "liquidatedAssetHash",
-            "type": "bytes32"
+            "internalType": "uint64",
+            "name": "timestamp",
+            "type": "uint64"
           },
           {
             "components": [
@@ -832,19 +897,19 @@
                 "type": "int128"
               },
               {
-                "internalType": "uint128",
+                "internalType": "int128",
                 "name": "liquidatorFee",
-                "type": "uint128"
+                "type": "int128"
               },
               {
-                "internalType": "uint128",
+                "internalType": "int128",
                 "name": "insuranceFee",
-                "type": "uint128"
+                "type": "int128"
               },
               {
-                "internalType": "uint128",
+                "internalType": "int128",
                 "name": "liquidationFee",
-                "type": "uint128"
+                "type": "int128"
               },
               {
                 "internalType": "uint128",
@@ -860,11 +925,6 @@
             "internalType": "struct EventTypes.LiquidationTransfer[]",
             "name": "liquidationTransfers",
             "type": "tuple[]"
-          },
-          {
-            "internalType": "uint64",
-            "name": "timestamp",
-            "type": "uint64"
           }
         ],
         "internalType": "struct EventTypes.Liquidation",
@@ -887,17 +947,111 @@
       {
         "components": [
           {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
             "internalType": "uint8",
-            "name": "bizType",
+            "name": "v",
             "type": "uint8"
           },
           {
-            "internalType": "bytes",
-            "name": "data",
-            "type": "bytes"
+            "internalType": "uint64",
+            "name": "maxTimestamp",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint128",
+                "name": "indexPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "markPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "symbolHash",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "timestamp",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct MarketTypes.PerpPrice[]",
+            "name": "perpPrices",
+            "type": "tuple[]"
           }
         ],
-        "internalType": "struct MarketTypes.PerpMarketUpload",
+        "internalType": "struct MarketTypes.PerpMarketUploadPerpPrice",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "executePerpMarketInfo",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "maxTimestamp",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "int128",
+                "name": "sumUnitaryFunding",
+                "type": "int128"
+              },
+              {
+                "internalType": "bytes32",
+                "name": "symbolHash",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "timestamp",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct MarketTypes.SumUnitaryFunding[]",
+            "name": "sumUnitaryFundings",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct MarketTypes.PerpMarketUploadSumUnitaryFundings",
         "name": "data",
         "type": "tuple"
       }
@@ -992,11 +1146,6 @@
             "type": "bytes32"
           },
           {
-            "internalType": "int128",
-            "name": "settledAmount",
-            "type": "int128"
-          },
-          {
             "internalType": "bytes32",
             "name": "settledAssetHash",
             "type": "bytes32"
@@ -1007,9 +1156,19 @@
             "type": "bytes32"
           },
           {
+            "internalType": "int128",
+            "name": "settledAmount",
+            "type": "int128"
+          },
+          {
             "internalType": "uint128",
             "name": "insuranceTransferAmount",
             "type": "uint128"
+          },
+          {
+            "internalType": "uint64",
+            "name": "timestamp",
+            "type": "uint64"
           },
           {
             "components": [
@@ -1037,11 +1196,6 @@
             "internalType": "struct EventTypes.SettlementExecution[]",
             "name": "settlementExecutions",
             "type": "tuple[]"
-          },
-          {
-            "internalType": "uint64",
-            "name": "timestamp",
-            "type": "uint64"
           }
         ],
         "internalType": "struct EventTypes.Settlement",
