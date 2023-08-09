@@ -84,6 +84,11 @@
   },
   {
     "inputs": [],
+    "name": "SafeCastOverflow",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "SymbolNotAllowed",
     "type": "error"
   },
@@ -645,6 +650,19 @@
     "type": "event"
   },
   {
+    "inputs": [],
+    "name": "_deprecated",
+    "outputs": [
+      {
+        "internalType": "contract ILedgerCrossChainManager",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "components": [
@@ -755,13 +773,270 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "crossChainManager",
+    "inputs": [
+      {
+        "internalType": "bytes32[]",
+        "name": "accountIds",
+        "type": "bytes32[]"
+      }
+    ],
+    "name": "batchGetUserLedger",
     "outputs": [
       {
-        "internalType": "contract ILedgerCrossChainManager",
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "accountId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "brokerHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "userAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint64",
+            "name": "lastWithdrawNonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "lastPerpTradeId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "lastCefiEventId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "lastDepositEventId",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "tokenHash",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint128",
+                "name": "balance",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "frozenBalance",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct AccountTypes.AccountTokenBalances[]",
+            "name": "tokenBalances",
+            "type": "tuple[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "symbolHash",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "int128",
+                "name": "positionQty",
+                "type": "int128"
+              },
+              {
+                "internalType": "int128",
+                "name": "costPosition",
+                "type": "int128"
+              },
+              {
+                "internalType": "int128",
+                "name": "lastSumUnitaryFundings",
+                "type": "int128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "lastExecutedPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "lastSettledPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "averageEntryPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "int128",
+                "name": "openingCost",
+                "type": "int128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "lastAdlPrice",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct AccountTypes.AccountPerpPositions[]",
+            "name": "perpPositions",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct AccountTypes.AccountSnapshot[]",
         "name": "",
-        "type": "address"
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32[]",
+        "name": "accountIds",
+        "type": "bytes32[]"
+      },
+      {
+        "internalType": "bytes32[]",
+        "name": "tokens",
+        "type": "bytes32[]"
+      },
+      {
+        "internalType": "bytes32[]",
+        "name": "symbols",
+        "type": "bytes32[]"
+      }
+    ],
+    "name": "batchGetUserLedgerByTokens",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "accountId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "brokerHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "userAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint64",
+            "name": "lastWithdrawNonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "lastPerpTradeId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "lastCefiEventId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "lastDepositEventId",
+            "type": "uint64"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "tokenHash",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint128",
+                "name": "balance",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "frozenBalance",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct AccountTypes.AccountTokenBalances[]",
+            "name": "tokenBalances",
+            "type": "tuple[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "symbolHash",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "int128",
+                "name": "positionQty",
+                "type": "int128"
+              },
+              {
+                "internalType": "int128",
+                "name": "costPosition",
+                "type": "int128"
+              },
+              {
+                "internalType": "int128",
+                "name": "lastSumUnitaryFundings",
+                "type": "int128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "lastExecutedPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "lastSettledPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "averageEntryPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "int128",
+                "name": "openingCost",
+                "type": "int128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "lastAdlPrice",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct AccountTypes.AccountPerpPositions[]",
+            "name": "perpPositions",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct AccountTypes.AccountSnapshot[]",
+        "name": "accountFlats",
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
@@ -938,125 +1213,6 @@
       }
     ],
     "name": "executeLiquidation",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "components": [
-          {
-            "internalType": "bytes32",
-            "name": "r",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "bytes32",
-            "name": "s",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "uint8",
-            "name": "v",
-            "type": "uint8"
-          },
-          {
-            "internalType": "uint64",
-            "name": "maxTimestamp",
-            "type": "uint64"
-          },
-          {
-            "components": [
-              {
-                "internalType": "uint128",
-                "name": "indexPrice",
-                "type": "uint128"
-              },
-              {
-                "internalType": "uint128",
-                "name": "markPrice",
-                "type": "uint128"
-              },
-              {
-                "internalType": "bytes32",
-                "name": "symbolHash",
-                "type": "bytes32"
-              },
-              {
-                "internalType": "uint64",
-                "name": "timestamp",
-                "type": "uint64"
-              }
-            ],
-            "internalType": "struct MarketTypes.PerpPrice[]",
-            "name": "perpPrices",
-            "type": "tuple[]"
-          }
-        ],
-        "internalType": "struct MarketTypes.UploadPerpPrice",
-        "name": "data",
-        "type": "tuple"
-      }
-    ],
-    "name": "executePerpMarketInfo",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "components": [
-          {
-            "internalType": "bytes32",
-            "name": "r",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "bytes32",
-            "name": "s",
-            "type": "bytes32"
-          },
-          {
-            "internalType": "uint8",
-            "name": "v",
-            "type": "uint8"
-          },
-          {
-            "internalType": "uint64",
-            "name": "maxTimestamp",
-            "type": "uint64"
-          },
-          {
-            "components": [
-              {
-                "internalType": "int128",
-                "name": "sumUnitaryFunding",
-                "type": "int128"
-              },
-              {
-                "internalType": "bytes32",
-                "name": "symbolHash",
-                "type": "bytes32"
-              },
-              {
-                "internalType": "uint64",
-                "name": "timestamp",
-                "type": "uint64"
-              }
-            ],
-            "internalType": "struct MarketTypes.SumUnitaryFunding[]",
-            "name": "sumUnitaryFundings",
-            "type": "tuple[]"
-          }
-        ],
-        "internalType": "struct MarketTypes.UploadSumUnitaryFundings",
-        "name": "data",
-        "type": "tuple"
-      }
-    ],
-    "name": "executePerpMarketInfo",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1319,30 +1475,6 @@
         "type": "bytes32"
       },
       {
-        "internalType": "bytes32",
-        "name": "tokenHash",
-        "type": "bytes32"
-      }
-    ],
-    "name": "getFrozenTotalBalance",
-    "outputs": [
-      {
-        "internalType": "uint128",
-        "name": "",
-        "type": "uint128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "accountId",
-        "type": "bytes32"
-      },
-      {
         "internalType": "uint64",
         "name": "withdrawNonce",
         "type": "uint64"
@@ -1359,134 +1491,6 @@
         "internalType": "uint128",
         "name": "",
         "type": "uint128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "accountId",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "symbolHash",
-        "type": "bytes32"
-      }
-    ],
-    "name": "getPerpPosition",
-    "outputs": [
-      {
-        "components": [
-          {
-            "internalType": "int128",
-            "name": "positionQty",
-            "type": "int128"
-          },
-          {
-            "internalType": "int128",
-            "name": "costPosition",
-            "type": "int128"
-          },
-          {
-            "internalType": "int128",
-            "name": "lastSumUnitaryFundings",
-            "type": "int128"
-          },
-          {
-            "internalType": "uint128",
-            "name": "lastExecutedPrice",
-            "type": "uint128"
-          },
-          {
-            "internalType": "uint128",
-            "name": "lastSettledPrice",
-            "type": "uint128"
-          },
-          {
-            "internalType": "uint128",
-            "name": "averageEntryPrice",
-            "type": "uint128"
-          },
-          {
-            "internalType": "int128",
-            "name": "openingCost",
-            "type": "int128"
-          },
-          {
-            "internalType": "uint128",
-            "name": "lastAdlPrice",
-            "type": "uint128"
-          }
-        ],
-        "internalType": "struct AccountTypes.PerpPosition",
-        "name": "perpPosition",
-        "type": "tuple"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "accountId",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "tokenHash",
-        "type": "bytes32"
-      }
-    ],
-    "name": "getUserLedgerBalance",
-    "outputs": [
-      {
-        "internalType": "uint128",
-        "name": "",
-        "type": "uint128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "accountId",
-        "type": "bytes32"
-      }
-    ],
-    "name": "getUserLedgerBrokerHash",
-    "outputs": [
-      {
-        "internalType": "bytes32",
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "accountId",
-        "type": "bytes32"
-      }
-    ],
-    "name": "getUserLedgerLastCefiEventId",
-    "outputs": [
-      {
-        "internalType": "uint64",
-        "name": "",
-        "type": "uint64"
       }
     ],
     "stateMutability": "view",
@@ -1658,6 +1662,13 @@
       }
     ],
     "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "upgradeInit",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

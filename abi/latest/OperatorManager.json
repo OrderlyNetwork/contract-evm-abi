@@ -129,7 +129,59 @@
   },
   {
     "inputs": [],
-    "name": "cefiSignatureAddress",
+    "name": "_depreacted",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cefiEventUploadAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cefiMarketUploadAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cefiPerpTradeUploadAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cefiSpotTradeUploadAddress",
     "outputs": [
       {
         "internalType": "address",
@@ -383,6 +435,19 @@
   },
   {
     "inputs": [],
+    "name": "marketManager",
+    "outputs": [
+      {
+        "internalType": "contract IMarketManager",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "operatorAddress",
     "outputs": [
       {
@@ -487,11 +552,50 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_cefiSignatureAddress",
+        "name": "_cefiEventUploadAddress",
         "type": "address"
       }
     ],
-    "name": "setCefiSignatureAddress",
+    "name": "setCefiEventUploadAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_cefiMarketUploadAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setCefiMarketUploadAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_cefiPerpTradeUploadAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setCefiPerpTradeUploadAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_cefiSpotTradeUploadAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setCefiSpotTradeUploadAddress",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -588,6 +692,13 @@
       }
     ],
     "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "upgradeInit",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
