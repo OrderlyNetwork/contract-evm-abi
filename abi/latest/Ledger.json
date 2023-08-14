@@ -920,7 +920,7 @@
         "type": "bytes32[]"
       }
     ],
-    "name": "batchGetUserLedgerByTokens",
+    "name": "batchGetUserLedger",
     "outputs": [
       {
         "components": [
@@ -1035,7 +1035,7 @@
           }
         ],
         "internalType": "struct AccountTypes.AccountSnapshot[]",
-        "name": "accountFlats",
+        "name": "accountSnapshots",
         "type": "tuple[]"
       }
     ],
