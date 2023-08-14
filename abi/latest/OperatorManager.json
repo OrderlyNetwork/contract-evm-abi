@@ -5,6 +5,27 @@
     "type": "constructor"
   },
   {
+    "inputs": [],
+    "name": "AccountIdInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint128",
+        "name": "balance",
+        "type": "uint128"
+      },
+      {
+        "internalType": "int128",
+        "name": "amount",
+        "type": "int128"
+      }
+    ],
+    "name": "BalanceNotEnough",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint64",
@@ -18,6 +39,11 @@
       }
     ],
     "name": "BatchIdNotMatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BrokerNotAllowed",
     "type": "error"
   },
   {
@@ -39,6 +65,48 @@
   {
     "inputs": [
       {
+        "internalType": "int128",
+        "name": "adlPositionQtyTransfer",
+        "type": "int128"
+      },
+      {
+        "internalType": "int128",
+        "name": "userPositionQty",
+        "type": "int128"
+      }
+    ],
+    "name": "InsurancePositionQtyInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint128",
+        "name": "balance",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint128",
+        "name": "insuranceTransferAmount",
+        "type": "uint128"
+      },
+      {
+        "internalType": "int128",
+        "name": "settledAmount",
+        "type": "int128"
+      }
+    ],
+    "name": "InsuranceTransferAmountInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InsuranceTransferToSelf",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint8",
         "name": "bizType",
         "type": "uint8"
@@ -49,12 +117,65 @@
   },
   {
     "inputs": [],
+    "name": "OnlyCrossChainManagerCanCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "OnlyOperatorCanCall",
     "type": "error"
   },
   {
     "inputs": [],
     "name": "SignatureNotMatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SymbolNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "tokenHash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "chainId",
+        "type": "uint256"
+      }
+    ],
+    "name": "TokenNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "int128",
+        "name": "amount",
+        "type": "int128"
+      }
+    ],
+    "name": "TotalSettleAmountNotMatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "accountId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "symbolHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "UserPerpPositionQtyZero",
     "type": "error"
   },
   {
