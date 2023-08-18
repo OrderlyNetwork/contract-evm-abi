@@ -650,19 +650,6 @@
     "type": "event"
   },
   {
-    "inputs": [],
-    "name": "_deprecated",
-    "outputs": [
-      {
-        "internalType": "contract ILedgerCrossChainManager",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "components": [
@@ -687,14 +674,14 @@
             "type": "bytes32"
           },
           {
-            "internalType": "uint128",
-            "name": "tokenAmount",
-            "type": "uint128"
-          },
-          {
             "internalType": "uint256",
             "name": "srcChainId",
             "type": "uint256"
+          },
+          {
+            "internalType": "uint128",
+            "name": "tokenAmount",
+            "type": "uint128"
           },
           {
             "internalType": "uint64",
@@ -1147,11 +1134,6 @@
           {
             "components": [
               {
-                "internalType": "uint64",
-                "name": "liquidationTransferId",
-                "type": "uint64"
-              },
-              {
                 "internalType": "bytes32",
                 "name": "liquidatorAccountId",
                 "type": "bytes32"
@@ -1195,6 +1177,11 @@
                 "internalType": "int128",
                 "name": "sumUnitaryFundings",
                 "type": "int128"
+              },
+              {
+                "internalType": "uint64",
+                "name": "liquidationTransferId",
+                "type": "uint64"
               }
             ],
             "internalType": "struct EventTypes.LiquidationTransfer[]",
@@ -1222,16 +1209,6 @@
       {
         "components": [
           {
-            "internalType": "uint64",
-            "name": "tradeId",
-            "type": "uint64"
-          },
-          {
-            "internalType": "uint64",
-            "name": "matchId",
-            "type": "uint64"
-          },
-          {
             "internalType": "bytes32",
             "name": "accountId",
             "type": "bytes32"
@@ -1242,9 +1219,9 @@
             "type": "bytes32"
           },
           {
-            "internalType": "bool",
-            "name": "side",
-            "type": "bool"
+            "internalType": "bytes32",
+            "name": "feeAssetHash",
+            "type": "bytes32"
           },
           {
             "internalType": "int128",
@@ -1267,19 +1244,29 @@
             "type": "uint128"
           },
           {
-            "internalType": "bytes32",
-            "name": "feeAssetHash",
-            "type": "bytes32"
-          },
-          {
             "internalType": "int128",
             "name": "sumUnitaryFundings",
             "type": "int128"
           },
           {
             "internalType": "uint64",
+            "name": "tradeId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "matchId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
             "name": "timestamp",
             "type": "uint64"
+          },
+          {
+            "internalType": "bool",
+            "name": "side",
+            "type": "bool"
           }
         ],
         "internalType": "struct PerpTypes.FuturesTradeUpload",
@@ -1662,13 +1649,6 @@
       }
     ],
     "name": "transferOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "upgradeInit",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
