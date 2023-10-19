@@ -10,6 +10,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "AddressZero",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -28,6 +33,11 @@
   {
     "inputs": [],
     "name": "BrokerNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "EnumerableSetError",
     "type": "error"
   },
   {
@@ -164,15 +174,28 @@
         "internalType": "uint128",
         "name": "fee",
         "type": "uint128"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "blocktime",
-        "type": "uint256"
       }
     ],
     "name": "AccountWithdraw",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ChangeCrossChainManager",
     "type": "event"
   },
   {

@@ -6,6 +6,11 @@
   },
   {
     "inputs": [],
+    "name": "LedgerAddressZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "OnlyLedgerCanCall",
     "type": "error"
   },
@@ -13,6 +18,49 @@
     "inputs": [],
     "name": "OnlyOperatorManagerCanCall",
     "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OperatorManagerAddressZero",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ChangeLedger",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ChangeOperatorManager",
+    "type": "event"
   },
   {
     "anonymous": false,
