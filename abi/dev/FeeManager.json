@@ -11,6 +11,11 @@
   },
   {
     "inputs": [],
+    "name": "LedgerAddressZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "OnlyLedgerCanCall",
     "type": "error"
   },
@@ -37,6 +42,25 @@
       }
     ],
     "name": "ChangeFeeCollector",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ChangeLedger",
     "type": "event"
   },
   {

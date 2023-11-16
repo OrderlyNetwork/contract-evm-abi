@@ -6,6 +6,11 @@
   },
   {
     "inputs": [],
+    "name": "LedgerAddressZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "OnlyLedgerCanCall",
     "type": "error"
   },
@@ -13,6 +18,49 @@
     "inputs": [],
     "name": "OnlyOperatorManagerCanCall",
     "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OperatorManagerAddressZero",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ChangeLedger",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ChangeOperatorManager",
+    "type": "event"
   },
   {
     "anonymous": false,
@@ -248,60 +296,6 @@
         "type": "bytes32"
       },
       {
-        "internalType": "uint32",
-        "name": "_baseInitialMargin",
-        "type": "uint32"
-      }
-    ],
-    "name": "setBaseInitialMargin",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "_pairSymbol",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "uint32",
-        "name": "_baseMaintenanceMargin",
-        "type": "uint32"
-      }
-    ],
-    "name": "setBaseMaintenanceMargin",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "_pairSymbol",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "uint128",
-        "name": "_indexPriceOrderly",
-        "type": "uint128"
-      }
-    ],
-    "name": "setIndexPriceOrderly",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "_pairSymbol",
-        "type": "bytes32"
-      },
-      {
         "internalType": "uint64",
         "name": "_lastFundingUpdated",
         "type": "uint64"
@@ -339,42 +333,6 @@
       }
     ],
     "name": "setLedgerAddress",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "_pairSymbol",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "uint128",
-        "name": "_liquidationFeeMax",
-        "type": "uint128"
-      }
-    ],
-    "name": "setLiquidationFeeMax",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "_pairSymbol",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "uint128",
-        "name": "_markPrice",
-        "type": "uint128"
-      }
-    ],
-    "name": "setMarkPrice",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -448,24 +406,6 @@
       }
     ],
     "name": "setPerpMarketCfg",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "_pairSymbol",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "int128",
-        "name": "_sumUnitaryFundings",
-        "type": "int128"
-      }
-    ],
-    "name": "setSumUnitaryFundings",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

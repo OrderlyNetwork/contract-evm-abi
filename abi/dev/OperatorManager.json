@@ -10,6 +10,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "AddressZero",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint128",
@@ -60,6 +65,11 @@
       }
     ],
     "name": "CountNotMatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "EnumerableSetError",
     "type": "error"
   },
   {
@@ -127,6 +137,37 @@
   },
   {
     "inputs": [],
+    "name": "RebalanceAlreadySucc",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "givenId",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "wantId",
+        "type": "uint64"
+      }
+    ],
+    "name": "RebalanceIdNotMatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RebalanceMintUnexpected",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RebalanceStillPending",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "SignatureNotMatch",
     "type": "error"
   },
@@ -183,6 +224,107 @@
     "inputs": [
       {
         "indexed": true,
+        "internalType": "uint8",
+        "name": "types",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ChangeEngineUpload",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ChangeLedger",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ChangeMarketManager",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint8",
+        "name": "types",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ChangeOperator",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "batchId",
+        "type": "uint64"
+      }
+    ],
+    "name": "EventUpload",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
         "internalType": "uint64",
         "name": "batchId",
         "type": "uint64"
@@ -195,6 +337,19 @@
       }
     ],
     "name": "EventUpload",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "batchId",
+        "type": "uint64"
+      }
+    ],
+    "name": "FuturesTradeUpload",
     "type": "event"
   },
   {
@@ -249,65 +404,104 @@
     "type": "event"
   },
   {
-    "inputs": [],
-    "name": "cefiEventUploadAddress",
-    "outputs": [
+    "anonymous": false,
+    "inputs": [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "rebalanceId",
+        "type": "uint64"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    "name": "RebalanceBurnUpload",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "rebalanceId",
+        "type": "uint64"
+      }
+    ],
+    "name": "RebalanceMintUpload",
+    "type": "event"
   },
   {
     "inputs": [],
-    "name": "cefiMarketUploadAddress",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "cefiPerpTradeUploadAddress",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "cefiSpotTradeUploadAddress",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "checkCefiDown",
+    "name": "checkEngineDown",
     "outputs": [
       {
         "internalType": "bool",
         "name": "",
         "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "engineEventUploadAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "engineMarketUploadAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "enginePerpTradeUploadAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "engineRebalanceUploadAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "engineSpotTradeUploadAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -650,6 +844,126 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "rebalanceId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint128",
+            "name": "amount",
+            "type": "uint128"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "tokenHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "srcChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "dstChainId",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct RebalanceTypes.RebalanceBurnUploadData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "rebalanceBurnUpload",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "rebalanceId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint128",
+            "name": "amount",
+            "type": "uint128"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "tokenHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "srcChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "dstChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "messageBytes",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "messageSignature",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct RebalanceTypes.RebalanceMintUploadData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "rebalanceMintUpload",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "renounceOwnership",
     "outputs": [],
@@ -660,11 +974,11 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_cefiEventUploadAddress",
+        "name": "_engineEventUploadAddress",
         "type": "address"
       }
     ],
-    "name": "setCefiEventUploadAddress",
+    "name": "setEngineEventUploadAddress",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -673,11 +987,11 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_cefiMarketUploadAddress",
+        "name": "_engineMarketUploadAddress",
         "type": "address"
       }
     ],
-    "name": "setCefiMarketUploadAddress",
+    "name": "setEngineMarketUploadAddress",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -686,11 +1000,11 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_cefiPerpTradeUploadAddress",
+        "name": "_enginePerpTradeUploadAddress",
         "type": "address"
       }
     ],
-    "name": "setCefiPerpTradeUploadAddress",
+    "name": "setEnginePerpTradeUploadAddress",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -699,11 +1013,24 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_cefiSpotTradeUploadAddress",
+        "name": "_engineRebalanceUploadAddress",
         "type": "address"
       }
     ],
-    "name": "setCefiSpotTradeUploadAddress",
+    "name": "setEngineRebalanceUploadAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_engineSpotTradeUploadAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setEngineSpotTradeUploadAddress",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

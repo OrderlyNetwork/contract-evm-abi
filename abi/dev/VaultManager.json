@@ -6,8 +6,68 @@
   },
   {
     "inputs": [],
+    "name": "EnumerableSetError",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LedgerAddressZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "OnlyLedgerCanCall",
     "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RebalanceAlreadySucc",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "givenId",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "wantId",
+        "type": "uint64"
+      }
+    ],
+    "name": "RebalanceIdNotMatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RebalanceMintUnexpected",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RebalanceStillPending",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ChangeLedger",
+    "type": "event"
   },
   {
     "anonymous": false,
@@ -39,6 +99,94 @@
       }
     ],
     "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "rebalanceId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "tokenHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "srcChainId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "dstChainId",
+        "type": "uint256"
+      }
+    ],
+    "name": "RebalanceBurn",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "rebalanceId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "success",
+        "type": "bool"
+      }
+    ],
+    "name": "RebalanceBurnResult",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "rebalanceId",
+        "type": "uint64"
+      }
+    ],
+    "name": "RebalanceMint",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "rebalanceId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "success",
+        "type": "bool"
+      }
+    ],
+    "name": "RebalanceMintResult",
     "type": "event"
   },
   {
@@ -161,6 +309,137 @@
       }
     ],
     "name": "addBalance",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "rebalanceId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint128",
+            "name": "amount",
+            "type": "uint128"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "tokenHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "srcChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "dstChainId",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct RebalanceTypes.RebalanceBurnUploadData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "executeRebalanceBurn",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "",
+        "type": "uint32"
+      },
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "rebalanceId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint128",
+            "name": "amount",
+            "type": "uint128"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "tokenHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "srcChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "dstChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "messageBytes",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "messageSignature",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct RebalanceTypes.RebalanceMintUploadData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "executeRebalanceMint",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -358,6 +637,44 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "chainId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getChain2VaultAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "chainId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getChain2cctpDomain",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "",
+        "type": "uint32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "bytes32",
         "name": "_tokenHash",
         "type": "bytes32"
@@ -399,6 +716,42 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "rebalanceId",
+        "type": "uint64"
+      }
+    ],
+    "name": "getRebalanceStatus",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "rebalanceId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "enum RebalanceTypes.RebalanceStatusEnum",
+            "name": "burnStatus",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum RebalanceTypes.RebalanceStatusEnum",
+            "name": "mintStatus",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct RebalanceTypes.RebalanceStatus",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "initialize",
     "outputs": [],
@@ -426,6 +779,125 @@
         "internalType": "address",
         "name": "",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "success",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint64",
+            "name": "rebalanceId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint128",
+            "name": "amount",
+            "type": "uint128"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "tokenHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "srcChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "dstChainId",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct RebalanceTypes.RebalanceBurnCCFinishData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "rebalanceBurnFinish",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "success",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint64",
+            "name": "rebalanceId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint128",
+            "name": "amount",
+            "type": "uint128"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "tokenHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "srcChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "dstChainId",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct RebalanceTypes.RebalanceMintCCFinishData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "rebalanceMintFinish",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "name": "rebalanceStatus",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "rebalanceId",
+        "type": "uint64"
+      },
+      {
+        "internalType": "enum RebalanceTypes.RebalanceStatusEnum",
+        "name": "burnStatus",
+        "type": "uint8"
+      },
+      {
+        "internalType": "enum RebalanceTypes.RebalanceStatusEnum",
+        "name": "mintStatus",
+        "type": "uint8"
       }
     ],
     "stateMutability": "view",
@@ -511,6 +983,42 @@
       }
     ],
     "name": "setAllowedToken",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "chainId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "vaultAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setChain2VaultAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "chainId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "cctpDomain",
+        "type": "uint32"
+      }
+    ],
+    "name": "setChain2cctpDomain",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

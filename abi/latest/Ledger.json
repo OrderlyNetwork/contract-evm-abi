@@ -36,6 +36,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "FrozenBalanceInconsistent",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "int128",
@@ -217,6 +222,73 @@
       },
       {
         "indexed": true,
+        "internalType": "uint64",
+        "name": "depositNonce",
+        "type": "uint64"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "eventId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "userAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "tokenHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "tokenAmount",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "srcChainId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "srcChainDepositNonce",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "brokerHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "blocktime",
+        "type": "uint256"
+      }
+    ],
+    "name": "AccountDeposit",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "accountId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
         "internalType": "bytes32",
         "name": "brokerId",
         "type": "bytes32"
@@ -226,6 +298,37 @@
         "internalType": "address",
         "name": "userAddress",
         "type": "address"
+      }
+    ],
+    "name": "AccountRegister",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "accountId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "brokerId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "userAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "blocktime",
+        "type": "uint256"
       }
     ],
     "name": "AccountRegister",
@@ -293,6 +396,79 @@
         "internalType": "uint128",
         "name": "fee",
         "type": "uint128"
+      }
+    ],
+    "name": "AccountWithdrawApprove",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "accountId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "withdrawNonce",
+        "type": "uint64"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "eventId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "brokerHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "receiver",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "chainId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "tokenHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "tokenAmount",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "fee",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "blocktime",
+        "type": "uint256"
       }
     ],
     "name": "AccountWithdrawApprove",
@@ -433,6 +609,158 @@
         "internalType": "uint128",
         "name": "fee",
         "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "blocktime",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "failReson",
+        "type": "uint8"
+      }
+    ],
+    "name": "AccountWithdrawFail",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "accountId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "withdrawNonce",
+        "type": "uint64"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "eventId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "brokerHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "receiver",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "chainId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "tokenHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "tokenAmount",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "fee",
+        "type": "uint128"
+      }
+    ],
+    "name": "AccountWithdrawFinish",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "accountId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "withdrawNonce",
+        "type": "uint64"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "eventId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "brokerHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "receiver",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "chainId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "tokenHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "tokenAmount",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "fee",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "blocktime",
+        "type": "uint256"
       }
     ],
     "name": "AccountWithdrawFinish",
@@ -492,7 +820,7 @@
       {
         "indexed": false,
         "internalType": "uint64",
-        "name": "lastCefiEventId",
+        "name": "lastEngineEventId",
         "type": "uint64"
       }
     ],
@@ -643,7 +971,7 @@
       {
         "indexed": false,
         "internalType": "uint64",
-        "name": "lastCefiEventId",
+        "name": "lastEngineEventId",
         "type": "uint64"
       }
     ],
@@ -667,6 +995,85 @@
       }
     ],
     "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "accountId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "symbolHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "feeAssetHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "int128",
+        "name": "tradeQty",
+        "type": "int128"
+      },
+      {
+        "indexed": false,
+        "internalType": "int128",
+        "name": "notional",
+        "type": "int128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "executedPrice",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "fee",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "int128",
+        "name": "sumUnitaryFundings",
+        "type": "int128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "tradeId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "matchId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "timestamp",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "side",
+        "type": "bool"
+      }
+    ],
+    "name": "ProcessValidatedFutures",
     "type": "event"
   },
   {
@@ -717,7 +1124,7 @@
       {
         "indexed": false,
         "internalType": "uint64",
-        "name": "lastCefiEventId",
+        "name": "lastEngineEventId",
         "type": "uint64"
       }
     ],
@@ -873,7 +1280,7 @@
           },
           {
             "internalType": "uint64",
-            "name": "lastCefiEventId",
+            "name": "lastEngineEventId",
             "type": "uint64"
           },
           {
@@ -1013,7 +1420,7 @@
           },
           {
             "internalType": "uint64",
-            "name": "lastCefiEventId",
+            "name": "lastEngineEventId",
             "type": "uint64"
           },
           {
@@ -1360,6 +1767,126 @@
         "components": [
           {
             "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "rebalanceId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint128",
+            "name": "amount",
+            "type": "uint128"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "tokenHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "srcChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "dstChainId",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct RebalanceTypes.RebalanceBurnUploadData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "executeRebalanceBurn",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "rebalanceId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint128",
+            "name": "amount",
+            "type": "uint128"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "tokenHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "srcChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "dstChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes",
+            "name": "messageBytes",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "messageSignature",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct RebalanceTypes.RebalanceMintUploadData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "executeRebalanceMint",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
             "name": "accountId",
             "type": "bytes32"
           },
@@ -1628,6 +2155,96 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "success",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint64",
+            "name": "rebalanceId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint128",
+            "name": "amount",
+            "type": "uint128"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "tokenHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "srcChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "dstChainId",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct RebalanceTypes.RebalanceBurnCCFinishData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "rebalanceBurnFinish",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "success",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint64",
+            "name": "rebalanceId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint128",
+            "name": "amount",
+            "type": "uint128"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "tokenHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "srcChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "dstChainId",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct RebalanceTypes.RebalanceMintCCFinishData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "rebalanceMintFinish",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
