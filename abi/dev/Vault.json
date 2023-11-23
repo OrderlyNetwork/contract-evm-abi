@@ -678,12 +678,12 @@
           },
           {
             "internalType": "uint256",
-            "name": "srcChainId",
+            "name": "burnChainId",
             "type": "uint256"
           },
           {
             "internalType": "uint256",
-            "name": "dstChainId",
+            "name": "mintChainId",
             "type": "uint256"
           },
           {
@@ -723,12 +723,12 @@
           },
           {
             "internalType": "uint256",
-            "name": "srcChainId",
+            "name": "burnChainId",
             "type": "uint256"
           },
           {
             "internalType": "uint256",
-            "name": "dstChainId",
+            "name": "mintChainId",
             "type": "uint256"
           },
           {
