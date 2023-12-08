@@ -237,6 +237,98 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "batchId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint8",
+            "name": "count",
+            "type": "uint8"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "accountId",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint8",
+                "name": "symbolId",
+                "type": "uint8"
+              },
+              {
+                "internalType": "int128",
+                "name": "tradeQty",
+                "type": "int128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "executedPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "fee",
+                "type": "uint128"
+              },
+              {
+                "internalType": "int128",
+                "name": "sumUnitaryFundings",
+                "type": "int128"
+              },
+              {
+                "internalType": "uint64",
+                "name": "tradeId",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "matchId",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "timestamp",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct PerpTypesZip.FuturesTradeUploadZip[]",
+            "name": "trades",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct PerpTypesZip.FuturesTradeUploadDataZip",
+        "name": "zip",
+        "type": "tuple"
+      }
+    ],
+    "name": "placeholder",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "renounceOwnership",
     "outputs": [],
