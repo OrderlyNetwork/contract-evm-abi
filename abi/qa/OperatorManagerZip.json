@@ -1,0 +1,698 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "AccountIdInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AddressZero",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint128",
+        "name": "balance",
+        "type": "uint128"
+      },
+      {
+        "internalType": "int128",
+        "name": "amount",
+        "type": "int128"
+      }
+    ],
+    "name": "BalanceNotEnough",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "batchId",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "futuresUploadBatchId",
+        "type": "uint64"
+      }
+    ],
+    "name": "BatchIdNotMatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BrokerNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "length",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "count",
+        "type": "uint256"
+      }
+    ],
+    "name": "CountNotMatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "EnumerableSetError",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FrozenBalanceInconsistent",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "IncorrectDictAccess",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "int128",
+        "name": "adlPositionQtyTransfer",
+        "type": "int128"
+      },
+      {
+        "internalType": "int128",
+        "name": "userPositionQty",
+        "type": "int128"
+      }
+    ],
+    "name": "InsurancePositionQtyInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint128",
+        "name": "balance",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint128",
+        "name": "insuranceTransferAmount",
+        "type": "uint128"
+      },
+      {
+        "internalType": "int128",
+        "name": "settledAmount",
+        "type": "int128"
+      }
+    ],
+    "name": "InsuranceTransferAmountInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InsuranceTransferToSelf",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "bizType",
+        "type": "uint8"
+      }
+    ],
+    "name": "InvalidBizType",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidFeeCollectorType",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LedgerAddressZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyCrossChainManagerCanCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyLedgerCanCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyOperatorCanCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyOperatorManagerCanCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OperatorManagerAddressZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RebalanceAlreadySucc",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "chainId",
+        "type": "uint256"
+      }
+    ],
+    "name": "RebalanceChainIdInvalid",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "givenId",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "wantId",
+        "type": "uint64"
+      }
+    ],
+    "name": "RebalanceIdNotMatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RebalanceMintUnexpected",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RebalanceStillPending",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "tokenHash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "chainId",
+        "type": "uint256"
+      }
+    ],
+    "name": "RebalanceTokenNotSupported",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SafeCastOverflow",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SafeCastUnderflow",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SignatureNotMatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SymbolNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SymbolNotRegister",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "tokenHash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "chainId",
+        "type": "uint256"
+      }
+    ],
+    "name": "TokenNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "int128",
+        "name": "amount",
+        "type": "int128"
+      }
+    ],
+    "name": "TotalSettleAmountNotMatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "accountId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "symbolHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "UserPerpPositionQtyZero",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ChangeOperator",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "ChangeOperatorManager",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "version",
+        "type": "uint8"
+      }
+    ],
+    "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "MAX_DICT_LEN",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "RESERVE_DICT_LEN",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "decodeFuturesTradeUploadData",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "decompress",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "decompressed",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "raw",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "begin",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "end",
+        "type": "uint256"
+      }
+    ],
+    "name": "getData",
+    "outputs": [
+      {
+        "internalType": "bytes32[]",
+        "name": "res",
+        "type": "bytes32[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "initSymbolId2Hash",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "operatorManager",
+    "outputs": [
+      {
+        "internalType": "contract IOperatorManager",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "r",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "s",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint8",
+            "name": "v",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "batchId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint8",
+            "name": "count",
+            "type": "uint8"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "accountId",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint8",
+                "name": "symbolId",
+                "type": "uint8"
+              },
+              {
+                "internalType": "int128",
+                "name": "tradeQty",
+                "type": "int128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "executedPrice",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "fee",
+                "type": "uint128"
+              },
+              {
+                "internalType": "int128",
+                "name": "sumUnitaryFundings",
+                "type": "int128"
+              },
+              {
+                "internalType": "uint64",
+                "name": "tradeId",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "matchId",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "timestamp",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct PerpTypesZip.FuturesTradeUploadZip[]",
+            "name": "trades",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct PerpTypesZip.FuturesTradeUploadDataZip",
+        "name": "zip",
+        "type": "tuple"
+      }
+    ],
+    "name": "placeholder",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_operatorManager",
+        "type": "address"
+      }
+    ],
+    "name": "setOpeartorManager",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_operatorAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setOperator",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "symbolHash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint8",
+        "name": "symbolId",
+        "type": "uint8"
+      }
+    ],
+    "name": "setSymbol",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "name": "symbolId2Hash",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "zipOperatorAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
