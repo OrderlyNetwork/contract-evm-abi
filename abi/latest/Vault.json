@@ -42,6 +42,11 @@
   },
   {
     "inputs": [],
+    "name": "NotZeroCodeLength",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "OnlyCrossChainManagerCanCall",
     "type": "error"
   },
@@ -52,8 +57,55 @@
   },
   {
     "inputs": [],
+    "name": "ZeroCodeLength",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ZeroDeposit",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "ZeroDepositFee",
     "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "delegateContract",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "brokerHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "delegateSigner",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "chainId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "blockNumber",
+        "type": "uint256"
+      }
+    ],
+    "name": "AccountDelegate",
+    "type": "event"
   },
   {
     "anonymous": false,
@@ -366,6 +418,31 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "brokerHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "delegateSigner",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct VaultTypes.VaultDelegate",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "name": "delegateSigner",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
