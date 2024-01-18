@@ -1004,6 +1004,11 @@
   },
   {
     "type": "error",
+    "name": "Bytes32Zero",
+    "inputs": []
+  },
+  {
+    "type": "error",
     "name": "CountNotMatch",
     "inputs": [
       {
@@ -1017,6 +1022,11 @@
         "internalType": "uint256"
       }
     ]
+  },
+  {
+    "type": "error",
+    "name": "DelegatecallFail",
+    "inputs": []
   },
   {
     "type": "error",
