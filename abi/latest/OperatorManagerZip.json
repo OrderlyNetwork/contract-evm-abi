@@ -840,6 +840,59 @@
   },
   {
     "type": "error",
+    "name": "WithdrawBalanceNotEnough",
+    "inputs": [
+      {
+        "name": "balance",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "withdrawAmount",
+        "type": "uint128",
+        "internalType": "uint128"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "WithdrawFeeTooLarge",
+    "inputs": [
+      {
+        "name": "maxFee",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "withdrawFee",
+        "type": "uint128",
+        "internalType": "uint128"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "WithdrawToAddressZero",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "WithdrawVaultBalanceNotEnough",
+    "inputs": [
+      {
+        "name": "balance",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "withdrawAmount",
+        "type": "uint128",
+        "internalType": "uint128"
+      }
+    ]
+  },
+  {
+    "type": "error",
     "name": "ZeroChainId",
     "inputs": []
   },

@@ -521,6 +521,24 @@
   },
   {
     "type": "function",
+    "name": "setDepositLimit",
+    "inputs": [
+      {
+        "name": "_tokenAddress",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_limit",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "setRebalanceMessengerContract",
     "inputs": [
       {
@@ -544,6 +562,25 @@
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "tokenAddress2DepositLimit",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
   },
   {
     "type": "function",
@@ -813,6 +850,25 @@
   },
   {
     "type": "event",
+    "name": "ChangeDepositLimit",
+    "inputs": [
+      {
+        "name": "_tokenAddress",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "_limit",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
     "name": "ChangeTokenAddressAndAllow",
     "inputs": [
       {
@@ -927,6 +983,31 @@
     "anonymous": false
   },
   {
+    "type": "event",
+    "name": "WithdrawFailed",
+    "inputs": [
+      {
+        "name": "token",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "receiver",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
     "type": "error",
     "name": "AccountIdInvalid",
     "inputs": []
@@ -955,6 +1036,11 @@
   {
     "type": "error",
     "name": "BrokerNotAllowed",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "DepositExceedLimit",
     "inputs": []
   },
   {
