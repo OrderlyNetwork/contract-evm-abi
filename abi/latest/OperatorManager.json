@@ -419,6 +419,11 @@
                 "internalType": "uint128"
               },
               {
+                "name": "storkPrice",
+                "type": "uint128",
+                "internalType": "uint128"
+              },
+              {
                 "name": "timestamp",
                 "type": "uint64",
                 "internalType": "uint64"
@@ -831,6 +836,25 @@
         "indexed": true,
         "internalType": "uint8"
       },
+      {
+        "name": "oldAddress",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "newAddress",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "ChangeOperatorImplA",
+    "inputs": [
       {
         "name": "oldAddress",
         "type": "address",

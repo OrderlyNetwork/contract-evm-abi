@@ -59,6 +59,11 @@
             "name": "lastFundingUpdated",
             "type": "uint256",
             "internalType": "uint256"
+          },
+          {
+            "name": "storkPrice",
+            "type": "uint128",
+            "internalType": "uint128"
           }
         ]
       }
@@ -161,6 +166,11 @@
         "name": "lastFundingUpdated",
         "type": "uint256",
         "internalType": "uint256"
+      },
+      {
+        "name": "storkPrice",
+        "type": "uint128",
+        "internalType": "uint128"
       }
     ],
     "stateMutability": "view"
@@ -287,6 +297,11 @@
             "name": "lastFundingUpdated",
             "type": "uint256",
             "internalType": "uint256"
+          },
+          {
+            "name": "storkPrice",
+            "type": "uint128",
+            "internalType": "uint128"
           }
         ]
       }
@@ -410,6 +425,11 @@
               },
               {
                 "name": "markPrice",
+                "type": "uint128",
+                "internalType": "uint128"
+              },
+              {
+                "name": "storkPrice",
                 "type": "uint128",
                 "internalType": "uint128"
               },
